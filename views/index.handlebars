@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row row-centered">
+        <div class="col-xs-12 text-center" id="logoContainer">
+            <img src="/assets/img/burger.png" id="burgerImg">
+            <h1> Eat-Da-Burger! </h1>
+        </div>
+    </div>
+</div>
+
+<ul>
+    {{#each burgers}}
+        <li>
+            <p> Name: {{burger_name}} </p>
+            <p> Devoured: {{devoured}} </p>
+            <p> Date_Added: {{date}} </p>
+        </li>
+    {{/each}}
+</ul>
+
+
+
