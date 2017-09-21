@@ -5,9 +5,9 @@
             <h1> Eat-Da-Burger! </h1>
         </div>
     </div>
-</div>
 
-<ul>
+
+{{!-- <ul>
     {{#each burgers}}
         <li>
             <p> Name: {{burger_name}} </p>
@@ -15,7 +15,18 @@
             <p> Date_Added: {{date}} </p>
         </li>
     {{/each}}
-</ul>
+</ul> --}}
+
+
+    <div class="row row-centered">
+        <div class="form-group">
+            <form method="POST" action="/" class="add-burger-form">
+                <textarea type="text" name="burger_name"></textarea>
+            </form>
+        </div>
+        <button type="submit">Add Burger</button>
+    </div>
+</div>
 
 
 
