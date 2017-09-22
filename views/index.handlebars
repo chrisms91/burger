@@ -2,12 +2,12 @@
     <div class="row row-centered">
         <div class="col-xs-12 text-center" id="logoContainer">
             <img src="/assets/img/burger.png" id="burgerImg">
-            <h1> Eat-Da-Burger! </h1>
+            <h1 id="logoText"> Eat-Da-Burger! </h1>
         </div>
     </div>
 
 
-{{!-- <ul>
+<ul>
     {{#each burgers}}
         <li>
             <p> Name: {{burger_name}} </p>
@@ -15,16 +15,16 @@
             <p> Date_Added: {{date}} </p>
         </li>
     {{/each}}
-</ul> --}}
+</ul>
 
 
     <div class="row row-centered">
         <div class="form-group">
-            <form method="POST" action="/" class="add-burger-form">
-                <textarea type="text" name="burger_name"></textarea>
+            <form method="POST" action="/burgers/add" class="add-burger-form">
+                <textarea type="text" name="burger_name" rows="4" cols="50" id="add-burger-input"></textarea>
+                <button class="btn btn-default" type="submit">Add Burger</button>
             </form>
         </div>
-        <button type="submit">Add Burger</button>
     </div>
 </div>
 

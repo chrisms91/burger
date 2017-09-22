@@ -19,6 +19,11 @@ html, body {
 	margin: 0 auto;
 } */
 
-#logoContainer {
+#burgerImg {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#add-burger-input {
     margin-top: 30px;
 }

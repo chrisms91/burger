@@ -8,11 +8,16 @@ router.get("/", function(req, res){
 
 router.get("/burgers", function(req, res){
     burger.selectAll(function(data){
-        console.log(res);
         res.render("index", {
             burgers: data
         });
-    })
+    });
+});
+
+router.post("/burgers/add", function(req, res){
+    burger.insertOne(req.body.burger_name, function(data){
+        res.redirect("/burgers");
+    });
 });
 
 module.exports = router;

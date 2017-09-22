@@ -7,8 +7,7 @@ var orm = {
         var queryString = "SELECT * FROM burgers";
         con.query(queryString, function(err, data){
             if (err) throw err;
-
-            console.log(data);
+            console.log("selectAll()");
             callback(data);
         });
     },
@@ -17,9 +16,8 @@ var orm = {
         var queryString = "INSERT INTO burgers SET ?";
         con.query(queryString, [{burger_name: whatToInsert}], function(err, data){
             if (err) throw err;
-
-            console.log("\nNew Burger " + whatToInsert + " is inserted into database!\n");
-            console.log(data);
+            console.log("insertOne()");
+            // console.log("\nNew Burger " + whatToInsert + " is inserted into database!\n");
             callback(data);
         });
     },
@@ -28,9 +26,8 @@ var orm = {
         var queryString = "UPDATE burgers SET ? WHERE ?";
         con.query(queryString, [{devoured: updateValue}, {id: whatToUpdate}], function(err, data){
             if (err) throw err;
-
-            console.log("\n" + whatToUpdate + " is updated to " + updateValue + "\n");
-            console.log(data);
+            console.log("updateOne()")
+            // console.log("\n" + whatToUpdate + " is updated to " + updateValue + "\n");
             callback(data);
         });
     }

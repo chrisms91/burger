@@ -7,11 +7,15 @@ var burger = {
             callback(data);
         });
     },
-    insertOne: function(whatToInsert){
-        orm.insertOne(whatToInsert);
+    insertOne: function(whatToInsert, callback){
+        orm.insertOne(whatToInsert, function(data){
+            callback(data);
+        });
     },
-    updateOne: function(whatToUpdate, updateValue){
-        orm.updateOne(whatToUpdate, updateValue);
+    updateOne: function(whatToUpdate, updateValue, callback){
+        orm.updateOne(whatToUpdate, updateValue, function(data){
+            callback(data);
+        });
     }
 }
 
