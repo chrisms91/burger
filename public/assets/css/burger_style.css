@@ -1,6 +1,8 @@
 html, body {
 	height: 100%;
-	width: 100%;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: #ff9a66;
 }
 
 .row-centered {
@@ -24,6 +26,39 @@ html, body {
     margin-bottom: 30px;
 }
 
+#logoText {
+    font-weight: 700;
+}
+
 #add-burger-input {
-    margin-top: 30px;
+    margin-top: 15px;
+}
+
+.burger-panel {
+    border: none;
+}
+
+textarea { font-size: 40px; }
+
+.list-group {
+    background-color: #ff9a66;
+}
+
+.list-group-item {
+    margin-bottom: 15px;
+    background-color: #ff9a66;
+    border: none;
+}
+
+.lead {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-right: 15px;
+    margin-bottom: 0;
+    padding: 5px 5px;
+    background-color: white;
+}
+
+#logoContainer {
+    margin-bottom: 15px;
 }

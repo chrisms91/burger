@@ -1,4 +1,5 @@
 <div class="container">
+    {{!-- SITE HEADER --}}
     <div class="row row-centered">
         <div class="col-xs-12 text-center" id="logoContainer">
             <img src="/assets/img/burger.png" id="burgerImg">
@@ -6,25 +7,64 @@
         </div>
     </div>
 
-
-<ul>
-    {{#each burgers}}
-        <li>
-            <p> Name: {{burger_name}} </p>
-            <p> Devoured: {{devoured}} </p>
-            <p> Date_Added: {{date}} </p>
-        </li>
-    {{/each}}
-</ul>
-
-
+    {{!-- LEFT MENU before devoured --}}
     <div class="row row-centered">
-        <div class="form-group">
-            <form method="POST" action="/burgers/add" class="add-burger-form">
-                <textarea type="text" name="burger_name" rows="4" cols="50" id="add-burger-input"></textarea>
-                <button class="btn btn-default" type="submit">Add Burger</button>
-            </form>
+        <div class="col-xs-5 col-xs-offset-1">
+            <div class="panel panel-default burger-panel">
+                <ul class="list-group">
+                    {{#each burgers}}
+                        {{#unless devoured}}
+                            <li class="list-group-item">
+                                <div class="input-group">
+                                    <p class="lead">{{id}}. {{burger_name}} </p>
+                                    <span class="input-group-btn">
+                                        <form action="burgers/{{id}}?_method=PUT" method="POST">
+                                            <input type="hidden" name="devoured" value="true">
+                                            <button class="btn btn-default btn-lg" type="submit"> DEVOUR! </button>
+                                        </form>
+                                    </span>
+                                </div>
+                            </li>
+                        {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
         </div>
+    {{!-- </div> --}}
+
+    {{!-- RIGHT MENU after devoured --}}
+    {{!-- <div class="row row-centered"> --}}
+        <div class="col-xs-5">
+            <div class="panel panel-default burger-panel">
+                <ul class="list-group">
+                    {{#each burgers}}
+                        {{#if devoured}}
+                            <li class="list-group-item">
+                                <div class="input-group">
+                                    <p class="lead">{{id}}. {{burger_name}} </p>
+                                    <span class="input-group-btn">
+                                        <form action="burgers/{{id}}?_method=PUT" method="POST">
+                                            <input type="hidden" name="devoured" value="false">
+                                            <button class="btn btn-default btn-lg" type="submit"> EAT MORE! </button>
+                                        </form>
+                                    </span>
+                                </div>
+                            </li>
+                        {{/if}}
+                    {{/each}}
+                </ul>
+            </div> 
+        </div>
+    </div>
+
+    {{!-- ADD BURGER FORM --}}
+    <div class="row row-centered">
+        <form method="POST" action="/burgers/add" class="add-burger-form">
+            <div class="form-group">
+                <textarea type="text" name="burger_name" rows="2" cols="25" id="add-burger-input"></textarea>
+            </div>
+            <button class="btn btn-default" type="submit">Add Burger</button>
+        </form>
     </div>
 </div>
 
